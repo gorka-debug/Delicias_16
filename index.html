@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLEEP'N · Propuesta para Paseo de las Delicias, 16 (Madrid)</title>
+<meta name="description" content="Propuesta de SLEEP'N para el edificio de Paseo de las Delicias, 16 (Madrid): alquiler a 20 años, reforma a cargo de SLEEP'N y apertura en 2027 como hotel boutique de 42 habitaciones.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --bg:#FAF6EC;
+  --bg-soft:#F1EBDA;
+  --card:#FFFFFF;
+  --ink:#1B1D22;
+  --ink-soft:#5C5E63;
+  --line:rgba(27,29,34,0.12);
+  --yellow:#F2DE2C;
+  --yellow-ink:#1B1D22;
+  --coral:#C1502E;
+  --blue:#2C4A72;
+  --navy:#14171F;
+  --on-navy:#FAF6EC;
+  --on-navy-soft:#AEB0B8;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14161B;
+    --bg-soft:#1A1D23;
+    --card:#1E2128;
+    --ink:#F1EEE3;
+    --ink-soft:#ACAEB0;
+    --line:rgba(255,255,255,0.14);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14161B;
+  --bg-soft:#1A1D23;
+  --card:#1E2128;
+  --ink:#F1EEE3;
+  --ink-soft:#ACAEB0;
+  --line:rgba(255,255,255,0.14);
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'DM Sans',system-ui,sans-serif;
+  line-height:1.6;
+  padding-inline:0;
+}
+img{max-width:100%; display:block;}
+a{color:inherit;}
+.wrap{max-width:1180px; margin:0 auto; padding-inline:20px;}
+
+h1,h2,h3{
+  font-family:'Jost',system-ui,sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.01em;
+  text-wrap:balance;
+  line-height:1.02;
+  margin:0;
+}
+h1 .keep-case, h2 .keep-case, h3 .keep-case{ text-transform:none; }
+.eyebrow{
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+  font-size:0.72rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--coral);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.eyebrow::before{content:"";width:7px;height:7px;background:var(--coral);border-radius:50%;display:inline-block;}
+
+/* NAV */
+.nav{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding-block:12px;
+  gap:12px;
+}
+.logo-mark{ display:inline-flex; flex-direction:row; align-items:center; gap:14px; }
+.logo-mark img{max-width:150px; width:auto; height:auto; display:block;}
+.logo-mark .tag{
+  font-family:'Jost',sans-serif; font-weight:600; font-size:1.15rem;
+  letter-spacing:0.01em; text-transform:none; color:var(--ink-soft);
+  white-space:nowrap; padding-left:14px; border-left:1px solid var(--line);
+}
+@media (max-width:640px){
+  .logo-mark img{max-width:110px;}
+  .logo-mark .tag{font-size:0.9rem; padding-left:10px;}
+}
+.nav-links{display:flex; gap:22px; font-size:0.86rem; font-weight:600;}
+.nav-links a{text-decoration:none; opacity:0.8;}
+.nav-links a:hover{opacity:1;}
+.nav-cta{
+  background:var(--yellow); color:var(--yellow-ink);
+  font-weight:700; font-size:0.84rem;
+  padding:9px 16px; border-radius:3px; text-decoration:none;
+  white-space:nowrap;
+}
+@media (max-width:720px){ .nav-links{display:none;} }
+
+/* HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.hero-media{
+  position:relative;
+  height:88vh;
+  min-height:560px;
+  max-height:860px;
+  overflow:hidden;
+}
+@media (max-width:720px){ .hero-media{ height:78vh; min-height:520px; max-height:680px; } }
+.hero-media img{
+  width:100%; height:100%; object-fit:cover;
+  animation:kenburns 26s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion:reduce){ .hero-media img{animation:none;} }
+@keyframes kenburns{ from{transform:scale(1) translate(0,0);} to{transform:scale(1.12) translate(-1.5%, -1%);} }
+.hero-scrim{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(20,23,31,0.15) 0%, rgba(20,23,31,0.55) 60%, rgba(20,23,31,0.92) 100%);
+}
+.hero-content{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:36px 20px 34px;
+  color:var(--on-navy);
+  max-width:1180px; margin:0 auto;
+}
+.hero-content h1{
+  font-size:clamp(2.3rem, 6.4vw, 4.6rem);
+  color:var(--on-navy);
+}
+.hero-content h1 em{ font-style:normal; color:var(--yellow); }
+.hero-sub{
+  margin-top:14px; max-width:560px;
+  font-size:1.02rem; color:var(--on-navy-soft);
+}
+.hero-actions{ margin-top:22px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 20px; border-radius:3px;
+  font-weight:700; font-size:0.92rem; text-decoration:none;
+  border:1px solid transparent; cursor:pointer;
+}
+.btn-yellow{background:var(--yellow); color:var(--yellow-ink);}
+.btn-ghost{background:transparent; color:var(--on-navy); border-color:rgba(250,246,236,0.45);}
+.btn-video{
+  background:rgba(250,246,236,0.12); color:var(--on-navy);
+  border:1px solid rgba(250,246,236,0.4);
+  font-size:0.84rem; padding:10px 16px;
+}
+.hero-note{
+  margin-top:16px; font-family:'DM Sans',sans-serif; font-size:0.7rem;
+  color:var(--on-navy-soft); letter-spacing:0.03em;
+}
+.hero-lockup-img{
+  position:absolute; right:40px; bottom:36px;
+  width:230px; height:auto; opacity:0.95; pointer-events:none;
+}
+@media (max-width:860px){ .hero-lockup-img{width:160px; right:24px; bottom:28px;} }
+@media (max-width:560px){ .hero-lockup-img{display:none;} }
+
+.lockup-badge{
+  font-family:'Jost',sans-serif; font-weight:800; font-size:1.4rem; line-height:1.05;
+  letter-spacing:0.01em; text-transform:uppercase; color:var(--yellow); white-space:nowrap;
+}
+@media (max-width:760px){ .lockup-badge{font-size:1.1rem;} }
+
+/* SECTIONS */
+section{padding-block:64px;}
+.section-head{max-width:680px; margin-bottom:36px;}
+.section-head h2{font-size:clamp(1.7rem,3.6vw,2.5rem); margin-top:10px;}
+.section-head p{color:var(--ink-soft); margin-top:12px; font-size:1.02rem;}
+
+/* INTRO / TIMELINE */
+.intro-grid{
+  display:grid; grid-template-columns:1.1fr 0.9fr; grid-template-rows:auto auto;
+  column-gap:48px; row-gap:24px; align-items:start;
+}
+.intro-top{ grid-column:1; grid-row:1; }
+.intro-grid h2{font-size:clamp(1.7rem,3.6vw,2.5rem);}
+.timeline{
+  grid-column:2; grid-row:1; align-self:stretch;
+  display:flex; flex-direction:column; justify-content:space-between;
+  list-style:none; margin:0; padding:0; border-left:2px solid var(--line);
+}
+.timeline li{position:relative; padding:0 0 22px 24px;}
+.timeline li:last-child{padding-bottom:0;}
+.timeline li::before{
+  content:""; position:absolute; left:-6px; top:4px;
+  width:10px; height:10px; border-radius:50%; background:var(--coral);
+}
+.timeline .yr{font-family:'Jost',sans-serif; font-weight:700; font-size:0.82rem; color:var(--coral);}
+.timeline .tt{font-weight:700; margin-top:2px;}
+.timeline .dd{color:var(--ink-soft); font-size:0.92rem; margin-top:2px;}
+.badgerow{ grid-column:1; grid-row:2; display:flex; flex-wrap:wrap; gap:10px; }
+@media (max-width:860px){
+  .intro-grid{ grid-template-columns:1fr; grid-template-rows:auto auto auto; row-gap:24px; }
+  .intro-top{ grid-column:1; grid-row:1; }
+  .badgerow{ grid-column:1; grid-row:2; }
+  .timeline{ grid-column:1; grid-row:3; align-self:auto; display:block; }
+}
+.pill{
+  border:1px solid var(--line); background:var(--card);
+  border-radius:999px; padding:7px 14px; font-size:0.78rem; font-weight:600;
+  color:var(--ink-soft); white-space:nowrap;
+}
+
+/* KPI */
+.kpi-band{background:var(--navy); color:var(--on-navy);}
+.kpi-band .eyebrow{color:var(--yellow);}
+.kpi-band .eyebrow::before{background:var(--yellow);}
+.kpi-band .section-head h2{color:var(--on-navy);}
+.kpi-band .section-head p{color:var(--on-navy-soft);}
+.kpi-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.12);}
+@media (max-width:900px){ .kpi-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:480px){ .kpi-grid{grid-template-columns:1fr;} }
+.kpi{background:var(--navy); padding:26px 18px;}
+.kpi .num{font-family:'Jost',sans-serif; font-weight:800; font-size:clamp(1.9rem,3.2vw,2.5rem); color:var(--yellow); font-variant-numeric:tabular-nums;}
+.kpi .lbl{margin-top:6px; font-size:0.82rem; color:var(--on-navy-soft);}
+.kpi-foot{margin-top:18px; font-size:0.8rem; color:var(--on-navy-soft); font-family:'DM Sans',sans-serif;}
+
+/* MODELS */
+.model-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+@media (max-width:860px){ .model-grid{grid-template-columns:1fr;} }
+
+/* DESARROLLO — full-width horizontal card, applies to both models */
+.dev-card{
+  background:var(--card); border:1px solid var(--line); border-top:4px solid var(--ink);
+  border-radius:6px; padding:28px; margin-bottom:24px;
+  display:grid; grid-template-columns:280px 1fr; gap:32px; align-items:start;
+}
+@media (max-width:860px){ .dev-card{grid-template-columns:1fr; gap:18px;} }
+.dev-card-left{display:flex; flex-direction:column; gap:12px;}
+.dev-card-right{display:flex; flex-direction:column; gap:10px;}
+.dev-sub{font-family:'Jost',sans-serif; font-weight:700; font-size:0.92rem; color:var(--ink); display:flex; flex-wrap:wrap; align-items:baseline; gap:8px;}
+.dev-sub b{font-family:'Jost',sans-serif; font-weight:800; color:var(--coral); font-size:1rem;}
+.dev-scope-title{font-family:'Jost',sans-serif; font-weight:700; font-size:0.82rem; letter-spacing:0.02em; color:var(--ink-soft); margin-top:2px;}
+.dev-card ol{margin:0; padding:0; list-style:none; counter-reset:step;
+  display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+@media (max-width:1020px){ .dev-card ol{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){ .dev-card ol{grid-template-columns:1fr;} }
+.dev-card ol li{padding-left:20px; position:relative; font-size:0.9rem; color:var(--ink-soft); counter-increment:step;}
+.dev-card ol li::before{content:counter(step) "."; position:absolute; left:0; color:var(--ink); font-weight:700; font-family:'Jost',sans-serif;}
+
+.model-card{
+  background:var(--card); border:1px solid var(--line); border-radius:6px;
+  padding:28px; display:flex; flex-direction:column; gap:16px;
+}
+.model-card.accent{border-top:4px solid var(--coral);}
+.model-card.accent2{border-top:4px solid var(--blue);}
+.model-card h3{font-size:1.5rem;}
+.model-card ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+.model-card li{padding-left:20px; position:relative; font-size:0.95rem; color:var(--ink-soft);}
+.model-card li::before{content:"—"; position:absolute; left:0; color:var(--coral);}
+.model-card.accent2 li::before{color:var(--blue);}
+.ramp{display:flex; gap:6px; margin-top:6px;}
+.ramp div{flex:1; text-align:center; background:var(--bg-soft); border-radius:4px; padding:10px 4px; border:1px solid var(--line);}
+.ramp .n{font-family:'Jost',sans-serif; font-weight:700; font-size:1rem; color:var(--coral);}
+.ramp .y{font-size:0.68rem; color:var(--ink-soft); margin-top:2px;}
+.fee-list{display:flex; flex-direction:column; gap:8px; margin-top:4px;}
+.fee-row{display:flex; justify-content:space-between; font-size:0.9rem; border-bottom:1px dashed var(--line); padding-bottom:6px;}
+.fee-row b{font-family:'Jost',sans-serif; font-weight:600; color:var(--blue);}
+.safety{
+  margin-top:auto; background:var(--bg-soft); border-radius:4px; padding:12px 14px;
+  font-size:0.86rem; color:var(--ink-soft); border-left:3px solid var(--blue);
+}
+
+/* INSPIRACIÓN */
+.insp-intro{max-width:760px;}
+.insp-block{display:grid; grid-template-columns:280px 1fr; gap:32px; padding-block:30px; border-top:1px solid var(--line);}
+@media (max-width:860px){ .insp-block{grid-template-columns:1fr; gap:14px;} }
+.insp-block h3{font-size:1.35rem;}
+.insp-block p{color:var(--ink-soft); font-size:0.95rem; margin:10px 0 0;}
+.insp-photos{display:grid; gap:8px; grid-template-columns:repeat(var(--n,2),1fr);}
+.insp-photos img{width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:3px;}
+.insp-photos.solo img{aspect-ratio:16/9;}
+.insp-photos.alto img{aspect-ratio:4/5;}
+@media (max-width:640px){ .insp-photos{grid-template-columns:repeat(2,1fr);} .insp-photos.solo{grid-template-columns:1fr;} .insp-photos.tres img:first-child{grid-column:1/-1;} .insp-photos.alto{grid-template-columns:repeat(3,1fr);} }
+.insp-block p.insp-tag{margin:8px 0 18px; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--coral);}
+.insp-block p.insp-tag:last-child{margin-bottom:0;}
+.insp-details{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding-top:30px; border-top:1px solid var(--line);}
+@media (max-width:860px){ .insp-details{grid-template-columns:repeat(2,1fr); gap:18px;} }
+.insp-details img{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:3px;}
+.insp-details h3{font-size:1.15rem; margin-top:14px;}
+.insp-details p{color:var(--ink-soft); font-size:0.92rem; margin:6px 0 0;}
+
+/* OFERTA */
+.offer-card{max-width:860px;}
+.offer-card .ramp{flex-wrap:wrap;}
+.offer-card .ramp > div{min-width:84px;}
+.offer-card .ramp .n,.offer-card .ramp .y{background:none; border:0; padding:0;}
+.offer-note{font-size:0.8rem; color:var(--ink-soft);}
+
+/* CRITERIA */
+.criteria-strip{
+  margin-top:40px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;
+}
+@media (max-width:760px){ .criteria-strip{grid-template-columns:repeat(2,1fr);} }
+.criteria-item{background:var(--card); padding:20px 16px;}
+.criteria-item .n{font-family:'Jost',sans-serif; font-weight:800; font-size:1.5rem; color:var(--coral);}
+.criteria-item .l{font-size:0.82rem; color:var(--ink-soft); margin-top:4px;}
+
+/* HOTELS */
+.hotel-block{padding-block:56px; border-top:1px solid var(--line);}
+.hotel-head{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:22px;}
+.hotel-head h2{font-size:clamp(1.8rem,4vw,2.7rem);}
+.hotel-stats{display:flex; gap:22px; flex-wrap:wrap; margin-top:14px;}
+.hotel-stats div{min-width:90px;}
+.hotel-stats .n{font-family:'Jost',sans-serif; font-weight:700; font-size:1.15rem; color:var(--coral);}
+.hotel-stats .l{font-size:0.78rem; color:var(--ink-soft);}
+.hotel-block.valencia .hotel-stats .n{color:var(--blue);}
+.gallery{
+  display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:8px; margin-top:22px;
+}
+@media (max-width:760px){ .gallery{grid-template-columns:repeat(2,1fr); grid-auto-rows:130px;} }
+.gallery img{width:100%; height:100%; object-fit:cover; border-radius:3px;}
+.g-wide{grid-column:span 2;}
+.g-tall{grid-row:span 2;}
+.hotel-desc{max-width:640px; color:var(--ink-soft); margin-top:16px; font-size:0.98rem;}
+.hotel-cta{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;}
+.btn-outline{
+  border:1.5px solid var(--ink); color:var(--ink); background:transparent;
+  padding:10px 18px; border-radius:3px; font-weight:700; font-size:0.85rem; text-decoration:none;
+}
+.hotel-block.valencia .btn-outline{border-color:var(--blue); color:var(--blue);}
+.hotel-block.atocha .btn-outline{border-color:var(--coral); color:var(--coral);}
+
+/* BADGES / RECOGNITION */
+.badge-band{background:var(--bg-soft);}
+.badge-grid{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px;}
+.badge{
+  background:var(--card); border:1px solid var(--line); border-radius:4px;
+  padding:10px 14px; font-size:0.8rem; font-weight:600; color:var(--ink-soft);
+  display:flex; align-items:center; gap:8px;
+}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--coral);}
+
+/* TEAM */
+.team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:28px;}
+@media (max-width:760px){ .team-grid{grid-template-columns:1fr;} }
+.team-card{border:1px solid var(--line); border-radius:6px; padding:20px; background:var(--card);}
+.team-card .role{font-family:'DM Sans',sans-serif; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--coral);}
+.team-card h3{font-size:1.2rem; margin-top:6px; text-transform:none; letter-spacing:0;}
+.team-card p{font-size:0.86rem; color:var(--ink-soft); margin-top:8px;}
+
+/* CTA FINAL */
+.cta-band{background:var(--navy); color:var(--on-navy); position:relative; overflow:hidden;}
+.cta-band h2{color:var(--on-navy); font-size:clamp(1.8rem,4.4vw,3rem); max-width:720px;}
+.cta-band p{color:var(--on-navy-soft); max-width:560px; margin-top:14px;}
+.cta-actions{display:flex; flex-wrap:wrap; gap:14px; margin-top:28px;}
+.contact-row{position:relative; margin-top:26px;}
+.contact-line{display:flex; flex-wrap:wrap; gap:24px; font-family:'DM Sans',sans-serif; font-size:0.85rem; color:var(--on-navy-soft);}
+.contact-line b{color:var(--on-navy);}
+.cta-band .lockup-badge{ position:absolute; right:0; bottom:0; text-align:right; line-height:1; pointer-events:none; }
+@media (max-width:640px){
+  .cta-band .lockup-badge{ position:static; margin-top:24px; }
+}
+
+/* FOOTER */
+footer{padding-block:32px; border-top:1px solid var(--line);}
+.foot-grid{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-rows:auto auto;
+  column-gap:24px; row-gap:16px;
+  align-items:center;
+}
+.foot-grid .logo-mark{ grid-column:1; grid-row:1; }
+.foot-links{
+  grid-column:2; grid-row:1; justify-self:end;
+  display:flex; gap:18px; flex-wrap:wrap; font-size:0.78rem; color:var(--ink-soft);
+}
+.foot-links a{text-decoration:none; opacity:0.8;}
+.foot-disclaimer{ grid-column:1 / span 2; grid-row:2; font-size:0.78rem; color:var(--ink-soft); }
+@media (max-width:760px){
+  .foot-grid{grid-template-columns:1fr; grid-template-rows:auto auto; justify-items:center; text-align:center;}
+  .foot-grid .logo-mark{ grid-column:1; grid-row:1; }
+  .foot-links{ grid-column:1; grid-row:2; justify-self:center; }
+  .foot-disclaimer{ grid-column:1; grid-row:3; }
+}
+/* B-CORP LOGO — ahora en "Qué hacemos" */
+.intro-bcorp-logo{ display:block; width:260px; height:auto; max-width:100%; object-fit:contain; margin:20px 0 0; }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo-mark">
+      <img src="img/logo-real.png" alt="SLEEP'N" style="max-width:150px;">
+      <span class="tag">Activos</span>
+    </div>
+    <div class="nav-links">
+      <a href="#hoteles">Hoteles</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#inspiracion">Inspiración</a>
+      <a href="#equipo">Equipo</a>
+    </div>
+    <a class="nav-cta" href="#oferta">Ver la oferta</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-media">
+    <img src="img/atocha-new-rooftop-lounge.jpg" alt="Terraza rooftop de SLEEP'N Atocha con vistas a Madrid">
+    <div class="hero-scrim"></div>
+  </div>
+  <div class="hero-content">
+    <span class="eyebrow" style="color:var(--yellow);">Propuesta para Paseo de las Delicias, 16 · Madrid</span>
+    <h1 style="margin-top:14px;">Tu activo, <em>rentable y sostenible</em> con SLEEP'N</h1>
+    <p class="hero-sub">Alquilamos tu edificio durante 20 años, lo equipamos y lo explotamos como hotel boutique SLEEP'N de 42 habitaciones.</p>
+    <div class="hero-actions">
+      <a class="btn btn-yellow" href="docs/propuesta-arrendamiento-delicias16.pdf" target="_blank" rel="noopener">Ver la propuesta</a>
+      <a class="btn btn-ghost" href="#oferta">Ver la oferta</a>
+      <a class="btn-video" href="https://sleepn.eco/uploads/SLEEPN_Inauguracion.mp4" target="_blank" rel="noopener">▶ Video SLEEP'N</a>
+    </div>
+    <div class="hero-note">SLEEP'N — 1er alojamiento B Corp certificado de España · neutro en carbono</div>
+  </div>
+  <img class="hero-lockup-img" src="img/lockup-mejor-cadena.png" alt="Soñamos con ser la mejor cadena del mundo, para el">
+</div>
+
+<section id="quienes-somos">
+  <div class="wrap intro-grid">
+    <div class="intro-top">
+      <span class="eyebrow">Qué hacemos</span>
+      <h2 style="margin-top:12px;">Gestionamos conceptos hoteleros sostenibles certificados con Bcorp</h2>
+      <p style="color:var(--ink-soft); margin-top:16px; font-size:1.02rem; max-width:520px;">
+        <b style="color:var(--ink);">La gestión Bcorp multiplica el valor de tu inmueble.</b> SLEEP'N es una gestora hotelera para los que quieren algo más, por menos. No creemos en las categorías hoteleras: creemos en el producto. Reposicionamos Activos singulares en ubicaciones prime, con arquitectos y decoradores de prestigio, apostando siempre por relaciones a largo plazo con los propietarios.
+      </p>
+      <img class="intro-bcorp-logo" src="img/bcorp-logo.png" alt="Certified B Corporation — esta empresa cumple con altos estándares de impacto social y ambiental">
+    </div>
+    <ul class="timeline">
+      <li><div class="yr">2016</div><div class="tt">Nace SLEEP'N</div><div class="dd">Reposicionamos un hostal obsoleto de 80 habitaciones en Madrid con un contrato de alquiler a largo plazo.</div></li>
+      <li><div class="yr">2016 – 2025</div><div class="tt">Consolidación</div><div class="dd">SLEEP'N Atocha se consolida con sólidos resultados y reconocimientos del sector.</div></li>
+      <li><div class="yr">2026</div><div class="tt">SLEEP'N Valencia</div><div class="dd">Apertura del segundo hotel, 74 habitaciones en Ciutat Vella.</div></li>
+      <li><div class="yr">2028</div><div class="tt">Córdoba y Alicante</div><div class="dd">En desarrollo.</div></li>
+    </ul>
+    <div class="badgerow">
+      <span class="pill">Neutros en carbono</span>
+      <span class="pill">BREEAM</span>
+      <span class="pill">Great Place to Work</span>
+      <span class="pill">Travelife Gold</span>
+    </div>
+  </div>
+</section>
+
+<section id="hoteles" style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Nuestros hoteles</span>
+      <h2>Así transformamos un edificio en SLEEP'N</h2>
+    </div>
+  </div>
+
+  <div class="wrap hotel-block atocha" style="border-top:none; padding-top:0;">
+    <div class="hotel-head">
+      <div>
+        <h2>SLEEP'N <span class="keep-case">Atocha</span></h2>
+        <div class="hotel-stats">
+          <div><div class="n">80</div><div class="l">Habitaciones</div></div>
+          <div><div class="n">2016</div><div class="l">Apertura</div></div>
+          <div><div class="n">3★–4★</div><div class="l">Calidad de servicio</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="hotel-desc">Nuevo concepto boutique en el corazón de Madrid, entre el Museo Reina Sofía y el Museo del Prado, a escasos metros de la Estación de Atocha.</p>
+    <div class="gallery">
+      <img class="g-wide g-tall" src="img/atocha-new-bedroom.jpg" alt="Habitación de SLEEP'N Atocha">
+      <img src="img/atocha-new-lounge.jpg" alt="Zona de estar de SLEEP'N Atocha">
+      <img src="img/atocha-new-fireplace.jpg" alt="Rincón de chimenea y biblioteca de SLEEP'N Atocha">
+      <img src="img/atocha-new-rooftop-lounge.jpg" alt="Terraza chill-out de SLEEP'N Atocha">
+      <img src="img/atocha-new-bathroom.jpg" alt="Baño de una habitación de SLEEP'N Atocha">
+    </div>
+    <div class="hotel-cta">
+      <a class="btn-outline" href="https://sleepnatocha.com/files/DOSSIERv1.pdf" target="_blank" rel="noopener">Descargar dossier Atocha (PDF)</a>
+      <a class="btn-outline" href="https://sleepnatocha.com" target="_blank" rel="noopener">Ver sleepnatocha.com</a>
+    </div>
+  </div>
+
+  <div class="wrap hotel-block valencia">
+    <div class="hotel-head">
+      <div>
+        <h2>SLEEP'N <span class="keep-case">Valencia</span></h2>
+        <div class="hotel-stats">
+          <div><div class="n">74</div><div class="l">Habitaciones</div></div>
+          <div><div class="n">2026</div><div class="l">Apertura</div></div>
+          <div><div class="n">3★–4★</div><div class="l">Calidad de servicio</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="hotel-desc">Nuevo concepto boutique en el corazón de Valencia, entre la Catedral, el Mercado Central y el barrio de Ruzafa, a poca distancia de la estación de Joaquín Sorolla. C/ de Ribera, 4, Ciutat Vella.</p>
+    <div class="gallery">
+      <img class="g-wide g-tall" src="img/valencia-new-room.jpg" alt="Habitación de SLEEP'N Valencia">
+      <img src="img/valencia-new-facade.jpg" alt="Fachada del edificio de SLEEP'N Valencia">
+      <img src="img/valencia-new-bathroom.jpg" alt="Baño de una habitación de SLEEP'N Valencia">
+      <img src="img/valencia-new-rooftop1.jpg" alt="Terraza rooftop de SLEEP'N Valencia con vistas a la ciudad">
+      <img src="img/valencia-new-reception.jpg" alt="Recepción de SLEEP'N Valencia">
+    </div>
+    <div class="hotel-cta">
+      <a class="btn-outline" href="docs/sleepn-valencia-dossier.pdf" target="_blank" rel="noopener">Descargar dossier Valencia (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<section id="oferta">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Nuestra oferta</span>
+      <h2>Alquiler a 20 años para Delicias 16</h2>
+      <p>Estas son las condiciones de nuestra propuesta de arrendamiento:</p>
+    </div>
+    <div class="model-card accent offer-card">
+      <h3>Arrendamiento a largo plazo</h3>
+      <ul>
+        <li>20 años desde la entrega del inmueble: 5 de obligado cumplimiento y, después, salida posible cada 5 años con 12 meses de preaviso</li>
+        <li>Renta anual: la mayor entre el 35 % de las ventas netas del hotel y la renta mínima garantizada (RMG)</li>
+        <li>RMG base de 756.000 € al año (18.000 € por habitación), actualizada con el IPC desde el año 4, con un tope del 2,5 % anual</li>
+        <li>4 meses de carencia desde la entrega para adecuar la planta baja, amueblar y abrir</li>
+        <li>SLEEP'N invierte 840.000 € (20.000 € por habitación) en equipamiento, tecnología y acondicionamiento; las instalaciones fijas de la planta baja quedan en el inmueble al terminar el contrato</li>
+        <li>Aval bancario a primer requerimiento por una anualidad de RMG (máximo 756.000 €), que baja a 6 mensualidades (378.000 €) desde el año 7</li>
+        <li>Rentas netas de IVA. Suministros, tasas y conservación ordinaria, a cargo de SLEEP'N; IBI y seguro del continente, a cargo de la propiedad</li>
+      </ul>
+      <div>
+        <div class="eyebrow" style="margin-bottom:8px;">Renta mínima garantizada por año</div>
+        <div class="ramp">
+          <div><div class="n">504 k€</div><div class="y">Año 1</div></div>
+          <div><div class="n">609 k€</div><div class="y">Año 2</div></div>
+          <div><div class="n">693 k€</div><div class="y">Año 3</div></div>
+          <div><div class="n">910 k€</div><div class="y">Años 4 a 6</div></div>
+          <div><div class="n">756 k€</div><div class="y">Desde el año 7, + IPC</div></div>
+        </div>
+      </div>
+      <div class="offer-note">Los 462.000 € que se difieren en los años 1 a 3 se recuperan en los años 4 a 6 (154.000 € al año sobre la renta base): la propiedad cobra el 100 % de la renta pactada.</div>
+      <div><a class="btn-outline" href="docs/propuesta-arrendamiento-delicias16.pdf" target="_blank" rel="noopener">Ver la propuesta completa (PDF)</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="inspiracion">
+  <div class="wrap">
+    <div class="section-head insp-intro">
+      <span class="eyebrow">Inspiración</span>
+      <h2>Así quedaría tu edificio</h2>
+      <p>Así trabajamos cada estancia. Estas fotos son de nuestros hoteles, SLEEP'N Atocha (Madrid) y SLEEP'N Valencia: es el nivel de diseño y de acabados que proponemos para Delicias 16.</p>
+    </div>
+    <div class="insp-block">
+      <div><h3>Fachada</h3><p>La primera impresión del hotel: jardín vertical, toldos y el rótulo de la marca.</p></div>
+      <div>
+        <div class="insp-photos alto" style="--n:3"><img src="img/inspiracion/fachada-atocha-1.jpg" alt="Fachada de SLEEP'N Atocha con jardín vertical" loading="lazy"><img src="img/inspiracion/fachada-atocha-2.jpg" alt="Rótulo vertical y jardín de la fachada de SLEEP'N Atocha" loading="lazy"><img src="img/inspiracion/fachada-atocha-3.jpg" alt="Entrada de SLEEP'N Atocha con toldos y bicicletas" loading="lazy"></div>
+        <p class="insp-tag">SLEEP'N Atocha</p>
+      </div>
+    </div>
+    <div class="insp-block">
+      <div><h3>Recepción y zonas comunes</h3><p>La planta baja es el corazón del hotel. En Delicias 16 reúne la recepción, la zona de desayunos y el SHOPP'N.</p></div>
+      <div>
+        <div class="insp-photos tres" style="--n:3"><img src="img/inspiracion/recepcion-valencia-1.jpg" alt="Zona común de SLEEP'N Valencia con lámparas de techo" loading="lazy"><img src="img/inspiracion/recepcion-valencia-2.jpg" alt="Planta baja de SLEEP'N Valencia con la escultura de flores secas" loading="lazy"><img src="img/inspiracion/recepcion-valencia-3.jpg" alt="Bancos corridos y mesas de SLEEP'N Valencia" loading="lazy"></div>
+        <p class="insp-tag">SLEEP'N Valencia</p>
+        <div class="insp-photos tres" style="--n:3"><img src="img/inspiracion/recepcion-atocha-1.jpg" alt="Recepción de SLEEP'N Atocha con techo de lamas de madera" loading="lazy"><img src="img/inspiracion/recepcion-atocha-2.jpg" alt="Salón con chimenea de SLEEP'N Atocha" loading="lazy"><img src="img/inspiracion/recepcion-atocha-3.jpg" alt="Sofá con cojines de colores en SLEEP'N Atocha" loading="lazy"></div>
+        <p class="insp-tag">SLEEP'N Atocha</p>
+      </div>
+    </div>
+    <div class="insp-block">
+      <div><h3>Habitaciones</h3><p>Habitaciones luminosas con cabecero de lamas, luz indirecta, mobiliario tubular azul y suelo de terrazo.</p></div>
+      <div>
+        <div class="insp-photos tres" style="--n:3"><img src="img/inspiracion/habitacion-903.jpg" alt="Habitación doble de SLEEP'N Valencia con balcón" loading="lazy"><img src="img/inspiracion/habitacion-738.jpg" alt="Cabecero de lamas y mesitas tubulares" loading="lazy"><img src="img/inspiracion/habitacion-905.jpg" alt="Detalle de la mesita y la lámpara de lectura" loading="lazy"></div>
+        <p class="insp-tag">SLEEP'N Valencia</p>
+      </div>
+    </div>
+    <div class="insp-block">
+      <div><h3>Baños</h3><p>Azulejo artesanal, lavabo de piedra sobre estructura metálica, grifería blanca y mampara de vidrio.</p></div>
+      <div>
+        <div class="insp-photos" style="--n:2"><img src="img/inspiracion/bano-771.jpg" alt="Baño de SLEEP'N Valencia con ducha" loading="lazy"><img src="img/inspiracion/bano-767.jpg" alt="Lavabo de piedra y ducha" loading="lazy"><img src="img/inspiracion/bano-732.jpg" alt="Baño con puerta azul" loading="lazy"><img src="img/inspiracion/bano-778.jpg" alt="Lavabo de piedra" loading="lazy"></div>
+        <p class="insp-tag">SLEEP'N Valencia</p>
+      </div>
+    </div>
+    <div class="insp-block">
+      <div><h3>Desayunos</h3><p>Desayuno buffet con fruta, repostería y huevos a la plancha.</p></div>
+      <div>
+        <div class="insp-photos tres" style="--n:3"><img src="img/inspiracion/desayuno-933.jpg" alt="Buffet de desayuno de SLEEP'N Valencia" loading="lazy"><img src="img/inspiracion/desayuno-745.jpg" alt="Huevos a la plancha en el desayuno" loading="lazy"><img src="img/inspiracion/desayuno-734.jpg" alt="Mesa de desayuno con café, zumo y bizcocho" loading="lazy"></div>
+        <p class="insp-tag">SLEEP'N Valencia</p>
+      </div>
+    </div>
+    <div class="insp-details">
+      <div><img src="img/inspiracion/shoppn-936.jpg" alt="SHOPP'N de SLEEP'N Valencia" loading="lazy"><h3>SHOPP'N</h3><p>La tienda del hotel, en la propia planta baja.</p></div>
+      <div><img src="img/inspiracion/lockn-940.jpg" alt="Taquillas LOCK'N de SLEEP'N Valencia" loading="lazy"><h3>LOCK'N</h3><p>Taquillas para dejar el equipaje antes de la entrada o después de la salida.</p></div>
+      <div><img src="img/inspiracion/senaletica-747.jpg" alt="Señalética de las habitaciones de SLEEP'N Valencia" loading="lazy"><h3>Señalética</h3><p>Señalética propia, con los números de las habitaciones recortados en chapa.</p></div>
+      <div><img src="img/inspiracion/puertas-781.jpg" alt="Colgador de puerta de madera con el lema Still counting sheep" loading="lazy"><h3>Puertas</h3><p>Colgadores de puerta con el humor de la marca.</p></div>
+      <div><img src="img/inspiracion/pasillos-pantalla.jpg" alt="Pantalla en un pasillo con un mensaje de SLEEP'N" loading="lazy"><h3>Pasillos</h3><p>Pantallas con los mensajes de la marca.</p></div>
+      <div><img src="img/inspiracion/detalles-walkn.jpg" alt="Rótulos WALK'N con los minutos a pie al Jardín Botánico y al Retiro" loading="lazy"><h3>WALK'N</h3><p>Rótulos con los minutos a pie hasta el Botánico o el Retiro.</p></div>
+      <div><img src="img/inspiracion/detalles-packaging.jpg" alt="Caja rosa con la marca SLEEP'N y una tarjeta escrita" loading="lazy"><h3>Packaging</h3><p>Cajas y tarjetas con la imagen de la marca.</p></div>
+      <div><img src="img/inspiracion/generales-atocha.jpg" alt="Huéspedes con un mapa frente a la estación de Atocha" loading="lazy"><h3>El barrio</h3><p>El barrio también es parte de la experiencia. En la foto, la estación de Atocha.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="badge-band">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:20px;">
+      <span class="eyebrow">Reconocimientos</span>
+      <h2>Un proyecto avalado por el sector</h2>
+    </div>
+    <div class="badge-grid">
+      <span class="badge"><span class="dot"></span>1er alojamiento B Corp de España</span>
+      <span class="badge"><span class="dot"></span>Neutros en carbono (ECODES)</span>
+      <span class="badge"><span class="dot"></span>Travelife Gold</span>
+      <span class="badge"><span class="dot"></span>Great Place to Work</span>
+      <span class="badge"><span class="dot"></span>Kayak Travel Awards</span>
+      <span class="badge"><span class="dot"></span>Premio Hotel más Innovador</span>
+      <span class="badge"><span class="dot"></span>Choose Ecosystem — certificado sostenible</span>
+      <span class="badge"><span class="dot"></span>BREEAM</span>
+      <span class="badge"><span class="dot"></span>Finalista Premios CEPYME</span>
+      <span class="badge"><span class="dot"></span>Top 100 hoteles más sostenibles del mundo</span>
+    </div>
+  </div>
+</section>
+
+<section id="equipo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Equipo gestor</span>
+      <h2>Quién está detrás de SLEEP'N</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="role">Fundador</div>
+        <h3>Gonzalo de la Mata</h3>
+        <p>Más de 20 años de experiencia dirigiendo hoteles de 4* y 5* en España, incluido el primer hotel español en Nueva York. Fundó SLEEP'N Atocha en 2016.</p>
+      </div>
+      <div class="team-card">
+        <div class="role">Operaciones &amp; Sostenibilidad</div>
+        <h3>Gorka Rosell</h3>
+        <p>Más de 18 años de experiencia en dirección y revenue management de hoteles de 4*, incluida la responsabilidad de revenue de 35 hoteles AC Hotels by Marriott.</p>
+      </div>
+      <div class="team-card">
+        <div class="role">Expansión</div>
+        <h3>Alfonso Jiménez</h3>
+        <p>Más de 20 años de experiencia en desarrollo hotelero: expansión de hoteles de 5* en Mallorca, Italia y África en Babylon Hospitality, y dirección corporativa de F&amp;B de más de 120 hoteles Meliá en España.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="logo-mark">
+        <img src="img/logo-real.png" alt="SLEEP'N" style="max-width:150px; height:auto;">
+      </div>
+      <div class="foot-links">
+        <a href="https://sleepn.eco" target="_blank" rel="noopener">sleepn.eco</a>
+        <a href="https://sleepnatocha.com" target="_blank" rel="noopener">sleepnatocha.com</a>
+        <a href="https://sleepnvalencia.com" target="_blank" rel="noopener">sleepnvalencia.com</a>
+      </div>
+      <div class="foot-disclaimer">Contacto: <b>gonzalo@sleepn.eco</b> · +34 635 881 281<br>Documento de presentación comercial para la propiedad de Paseo de las Delicias, 16. La propuesta no es vinculante y está sujeta a la firma del contrato definitivo.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
