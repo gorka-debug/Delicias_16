@@ -310,6 +310,39 @@ section{padding-block:64px;}
 .offer-card .ramp > div{min-width:84px;}
 .offer-card .ramp .n,.offer-card .ramp .y{background:none; border:0; padding:0;}
 .offer-note{font-size:0.8rem; color:var(--ink-soft);}
+/* Proyección de la renta */
+.proy-cifras{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px;}
+.proy-cifras > div{background:var(--bg-soft); border:1px solid var(--line); border-radius:4px; padding:16px 18px;}
+.proy-cifras .v{font-family:'Jost',sans-serif; font-weight:800; font-size:1.7rem; line-height:1.1;}
+.proy-cifras .t{font-size:0.85rem; color:var(--ink-soft); margin-top:6px;}
+@media (max-width:640px){ .proy-cifras{grid-template-columns:1fr;} }
+.proy-card{background:var(--card); border:1px solid var(--line); border-radius:4px; padding:18px; margin-bottom:16px;}
+.proy-grafico{display:block; width:100%; height:auto;}
+.proy-grafico.pg-movil{display:none;}
+.proy-grafico path:hover{opacity:0.82;}
+.proy-scroll{overflow-x:auto;}
+.proy-tabla{width:100%; min-width:560px; border-collapse:collapse; font-size:0.9rem; font-variant-numeric:tabular-nums;}
+.proy-tabla th,.proy-tabla td{padding:8px 10px; border-bottom:1px solid var(--line); text-align:right; white-space:nowrap;}
+.proy-tabla thead th{font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+.proy-tabla th:first-child{text-align:left;}
+.proy-tabla tbody th{font-weight:600;}
+.proy-tabla td.paga{font-weight:600;}
+.proy-tabla td.paga small{font-weight:400; color:var(--ink-soft); margin-left:4px;}
+.proy-tabla .sw{display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:6px; vertical-align:middle;}
+.proy-tabla .sw.minima{background:#4F7BB8;} .proy-tabla .sw.variable{background:#D2603A;}
+.proy-tabla tr.total th,.proy-tabla tr.total td{font-weight:700; border-bottom:0; border-top:2px solid var(--line);}
+.proy-nota{font-size:0.8rem; color:var(--ink-soft); max-width:860px; margin:4px 0 18px;}
+@media (max-width:640px){
+  .proy-grafico.pg-ancho{display:none;} .proy-grafico.pg-movil{display:block;}
+  .proy-card{padding:12px;}
+  .proy-tabla{min-width:0; font-size:0.8rem;}
+  .proy-tabla th,.proy-tabla td{padding:7px 5px;}
+  .proy-tabla th:nth-child(2),.proy-tabla td:nth-child(2){display:none;}
+  .proy-tabla thead th,.proy-tabla tbody th{white-space:normal;}
+  .proy-tabla thead th{font-size:0.62rem; letter-spacing:0.04em;}
+  .proy-tabla td.paga small{display:block; margin-left:0;}
+}
+@media (max-width:370px){ .proy-tabla th,.proy-tabla td{padding:7px 3px;} }
 
 /* CRITERIA */
 .criteria-strip{
@@ -533,27 +566,148 @@ footer{padding-block:32px; border-top:1px solid var(--line);}
     <div class="model-card accent offer-card">
       <h3>Arrendamiento a largo plazo</h3>
       <ul>
-        <li>20 años desde la entrega del inmueble: 5 de obligado cumplimiento y, después, salida posible cada 5 años con 12 meses de preaviso</li>
-        <li>Renta anual: la mayor entre el 35 % de las ventas netas del hotel y la renta mínima garantizada (RMG)</li>
-        <li>RMG base de 756.000 € al año (18.000 € por habitación), actualizada con el IPC desde el año 4, con un tope del 2,5 % anual</li>
-        <li>4 meses de carencia desde la entrega para adecuar la planta baja, amueblar y abrir</li>
+        <li>20 años desde la entrega del inmueble, con 5 de obligado cumplimiento</li>
+        <li>Renta anual: la mayor entre el 32 % de las ventas netas* del hotel y la renta mínima garantizada (RMG)</li>
+        <li>RMG de 756.000 € al año (18.000 € por habitación), actualizada con el IPC desde el año 4, con un tope del 2,5 % anual</li>
+        <li>6 meses de carencia desde la entrega para el proyecto de interiorismo, las obras de la planta baja, el amueblamiento y la apertura</li>
         <li>SLEEP'N invierte 840.000 € (20.000 € por habitación) en equipamiento, tecnología y acondicionamiento; las instalaciones fijas de la planta baja quedan en el inmueble al terminar el contrato</li>
-        <li>Aval bancario a primer requerimiento por una anualidad de RMG (máximo 756.000 €), que baja a 6 mensualidades (378.000 €) desde el año 7</li>
-        <li>Rentas netas de IVA. Suministros, tasas y conservación ordinaria, a cargo de SLEEP'N; IBI y seguro del continente, a cargo de la propiedad</li>
+        <li>Aval bancario a primer requerimiento por una anualidad de RMG (máximo 756.000 €), que baja a 6 mensualidades (378.000 €) desde el año 7 si se han cumplido todos los pagos</li>
+        <li>Rentas netas de IVA. Suministros, tasas de actividad y conservación ordinaria, a cargo de SLEEP'N; IBI, tasas de basuras y residuos y seguro del continente, a cargo de la propiedad</li>
       </ul>
       <div>
         <div class="eyebrow" style="margin-bottom:8px;">Renta mínima garantizada por año</div>
         <div class="ramp">
-          <div><div class="n">504 k€</div><div class="y">Año 1</div></div>
-          <div><div class="n">609 k€</div><div class="y">Año 2</div></div>
-          <div><div class="n">693 k€</div><div class="y">Año 3</div></div>
-          <div><div class="n">910 k€</div><div class="y">Años 4 a 6</div></div>
-          <div><div class="n">756 k€</div><div class="y">Desde el año 7, + IPC</div></div>
+          <div><div class="n">378 k€</div><div class="y">Año 1 (6 meses de carencia)</div></div>
+          <div><div class="n">756 k€</div><div class="y">Años 2 y 3</div></div>
+          <div><div class="n">756 k€ + IPC</div><div class="y">Desde el año 4 (máx. 2,5 % al año)</div></div>
         </div>
       </div>
-      <div class="offer-note">Los 462.000 € que se difieren en los años 1 a 3 se recuperan en los años 4 a 6 (154.000 € al año sobre la renta base): la propiedad cobra el 100 % de la renta pactada.</div>
+      <div class="offer-note">* Ventas netas: ventas sin IVA una vez descontadas las comisiones de las agencias de viaje online (OTAs).</div>
       <div><a class="btn-outline" href="docs/propuesta-arrendamiento-delicias16.pdf" target="_blank" rel="noopener">Ver la propuesta completa (PDF)</a></div>
     </div>
+  </div>
+</section>
+
+<section id="proyeccion">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Proyección de la renta</span>
+      <h2>Desde el año 6, la renta es el 32 % de las ventas netas</h2>
+      <p>La renta anual es la mayor entre la renta mínima garantizada y el 32 % de las ventas netas*. Con las ventas que estimamos, el 32 % supera a la renta mínima a partir del año 6.</p>
+    </div>
+    <div class="proy-cifras">
+      <div><div class="v">Año 6</div><div class="t">Primer año en que la renta variable supera a la renta mínima</div></div>
+      <div><div class="v">15 de 20</div><div class="t">Años con renta variable (del 6 al 20)</div></div>
+      <div><div class="v">18,9 M€</div><div class="t">Renta total estimada en los 20 años</div></div>
+    </div>
+    <div class="proy-card">
+      <svg class="proy-grafico pg-ancho" viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pg-ancho-t pg-ancho-d" font-family="inherit">
+<title id="pg-ancho-t">Renta anual que cobra la propiedad, años 1 a 20</title>
+<desc id="pg-ancho-d">Años 1 a 5: se paga la renta mínima. Años 6 a 20: se paga la renta variable del 32 %, que es mayor. Renta total estimada en 20 años: 18,88 M€.</desc>
+<rect x="58" y="12" width="12" height="12" rx="2" fill="#4F7BB8"/><text x="76" y="22" font-size="13" style="fill:var(--ink,#1B1D22)">Se paga la renta mínima</text>
+<rect x="258" y="12" width="12" height="12" rx="2" fill="#D2603A"/><text x="276" y="22" font-size="13" style="fill:var(--ink,#1B1D22)">Se paga la renta variable (32 %)</text>
+<line x1="58" x2="746" y1="286.0" y2="286.0" style="stroke:var(--ink-soft,#5C5E63);stroke-opacity:.45" stroke-width="1"/>
+<text x="52" y="290.0" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="end">0</text>
+<line x1="58" x2="746" y1="220.9" y2="220.9" style="stroke:var(--line,#E6E1D5)" stroke-width="1"/>
+<text x="52" y="224.9" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="end">0,4 M€</text>
+<line x1="58" x2="746" y1="155.7" y2="155.7" style="stroke:var(--line,#E6E1D5)" stroke-width="1"/>
+<text x="52" y="159.7" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="end">0,8 M€</text>
+<line x1="58" x2="746" y1="90.6" y2="90.6" style="stroke:var(--line,#E6E1D5)" stroke-width="1"/>
+<text x="52" y="94.6" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="end">1,2 M€</text>
+<path d="M64.2,286 V228.4 Q64.2,224.4 68.2,224.4 H82.2 Q86.2,224.4 86.2,228.4 V286 Z" fill="#4F7BB8"><title>Año 1: renta a pagar 378.000 € · renta mínima (mínima 378.000 €; variable 272.320 €)</title></path>
+<text x="75.2" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">1</text>
+<path d="M98.6,286 V166.9 Q98.6,162.9 102.6,162.9 H116.6 Q120.6,162.9 120.6,166.9 V286 Z" fill="#4F7BB8"><title>Año 2: renta a pagar 756.000 € · renta mínima (mínima 756.000 €; variable 663.040 €)</title></path>
+<text x="109.6" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">2</text>
+<path d="M133.0,286 V166.9 Q133.0,162.9 137.0,162.9 H151.0 Q155.0,162.9 155.0,166.9 V286 Z" fill="#4F7BB8"><title>Año 3: renta a pagar 756.000 € · renta mínima (mínima 756.000 €; variable 728.160 €)</title></path>
+<text x="144.0" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">3</text>
+<path d="M167.4,286 V163.8 Q167.4,159.8 171.4,159.8 H185.4 Q189.4,159.8 189.4,163.8 V286 Z" fill="#4F7BB8"><title>Año 4: renta a pagar 774.900 € · renta mínima (mínima 774.900 €; variable 765.160 €)</title></path>
+<text x="178.4" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">4</text>
+<path d="M201.8,286 V160.6 Q201.8,156.6 205.8,156.6 H219.8 Q223.8,156.6 223.8,160.6 V286 Z" fill="#4F7BB8"><title>Año 5: renta a pagar 794.272 € · renta mínima (mínima 794.272 €; variable 791.800 €)</title></path>
+<text x="212.8" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">5</text>
+<path d="M236.2,286 V156.9 Q236.2,152.9 240.2,152.9 H254.2 Q258.2,152.9 258.2,156.9 V286 Z" fill="#D2603A"><title>Año 6: renta a pagar 817.138 € · renta variable 32 % (mínima 814.129 €; variable 817.138 €)</title></path>
+<text x="247.2" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">6</text>
+<path d="M270.6,286 V152.7 Q270.6,148.7 274.6,148.7 H288.6 Q292.6,148.7 292.6,152.7 V286 Z" fill="#D2603A"><title>Año 7: renta a pagar 843.286 € · renta variable 32 % (mínima 834.483 €; variable 843.286 €)</title></path>
+<text x="281.6" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">7</text>
+<path d="M305.0,286 V148.3 Q305.0,144.3 309.0,144.3 H323.0 Q327.0,144.3 327.0,148.3 V286 Z" fill="#D2603A"><title>Año 8: renta a pagar 870.271 € · renta variable 32 % (mínima 855.345 €; variable 870.271 €)</title></path>
+<text x="316.0" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">8</text>
+<path d="M339.4,286 V143.7 Q339.4,139.7 343.4,139.7 H357.4 Q361.4,139.7 361.4,143.7 V286 Z" fill="#D2603A"><title>Año 9: renta a pagar 898.120 € · renta variable 32 % (mínima 876.728 €; variable 898.120 €)</title></path>
+<text x="350.4" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">9</text>
+<path d="M373.8,286 V139.1 Q373.8,135.1 377.8,135.1 H391.8 Q395.8,135.1 395.8,139.1 V286 Z" fill="#D2603A"><title>Año 10: renta a pagar 926.860 € · renta variable 32 % (mínima 898.646 €; variable 926.860 €)</title></path>
+<text x="384.8" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">10</text>
+<path d="M408.2,286 V134.2 Q408.2,130.2 412.2,130.2 H426.2 Q430.2,130.2 430.2,134.2 V286 Z" fill="#D2603A"><title>Año 11: renta a pagar 956.519 € · renta variable 32 % (mínima 921.113 €; variable 956.519 €)</title></path>
+<text x="419.2" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">11</text>
+<path d="M442.6,286 V129.2 Q442.6,125.2 446.6,125.2 H460.6 Q464.6,125.2 464.6,129.2 V286 Z" fill="#D2603A"><title>Año 12: renta a pagar 987.128 € · renta variable 32 % (mínima 944.140 €; variable 987.128 €)</title></path>
+<text x="453.6" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">12</text>
+<path d="M477.0,286 V124.1 Q477.0,120.1 481.0,120.1 H495.0 Q499.0,120.1 499.0,124.1 V286 Z" fill="#D2603A"><title>Año 13: renta a pagar 1.018.716 € · renta variable 32 % (mínima 967.744 €; variable 1.018.716 €)</title></path>
+<text x="488.0" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">13</text>
+<path d="M511.4,286 V118.8 Q511.4,114.8 515.4,114.8 H529.4 Q533.4,114.8 533.4,118.8 V286 Z" fill="#D2603A"><title>Año 14: renta a pagar 1.051.315 € · renta variable 32 % (mínima 991.938 €; variable 1.051.315 €)</title></path>
+<text x="522.4" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">14</text>
+<path d="M545.8,286 V113.3 Q545.8,109.3 549.8,109.3 H563.8 Q567.8,109.3 567.8,113.3 V286 Z" fill="#D2603A"><title>Año 15: renta a pagar 1.084.957 € · renta variable 32 % (mínima 1.016.736 €; variable 1.084.957 €)</title></path>
+<text x="556.8" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">15</text>
+<path d="M580.2,286 V107.7 Q580.2,103.7 584.2,103.7 H598.2 Q602.2,103.7 602.2,107.7 V286 Z" fill="#D2603A"><title>Año 16: renta a pagar 1.119.675 € · renta variable 32 % (mínima 1.042.154 €; variable 1.119.675 €)</title></path>
+<text x="591.2" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">16</text>
+<path d="M614.6,286 V101.8 Q614.6,97.8 618.6,97.8 H632.6 Q636.6,97.8 636.6,101.8 V286 Z" fill="#D2603A"><title>Año 17: renta a pagar 1.155.505 € · renta variable 32 % (mínima 1.068.208 €; variable 1.155.505 €)</title></path>
+<text x="625.6" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">17</text>
+<path d="M649.0,286 V95.8 Q649.0,91.8 653.0,91.8 H667.0 Q671.0,91.8 671.0,95.8 V286 Z" fill="#D2603A"><title>Año 18: renta a pagar 1.192.481 € · renta variable 32 % (mínima 1.094.913 €; variable 1.192.481 €)</title></path>
+<text x="660.0" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">18</text>
+<path d="M683.4,286 V89.6 Q683.4,85.6 687.4,85.6 H701.4 Q705.4,85.6 705.4,89.6 V286 Z" fill="#D2603A"><title>Año 19: renta a pagar 1.230.641 € · renta variable 32 % (mínima 1.122.286 €; variable 1.230.641 €)</title></path>
+<text x="694.4" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">19</text>
+<path d="M717.8,286 V83.2 Q717.8,79.2 721.8,79.2 H735.8 Q739.8,79.2 739.8,83.2 V286 Z" fill="#D2603A"><title>Año 20: renta a pagar 1.270.021 € · renta variable 32 % (mínima 1.150.343 €; variable 1.270.021 €)</title></path>
+<text x="728.8" y="304" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">20</text>
+<text x="402.0" y="326" font-size="12" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">Año del contrato</text>
+<text x="75.2" y="216.4" font-size="12.5" font-weight="600" style="fill:var(--ink,#1B1D22)" text-anchor="middle">378 k€</text>
+<text x="247.2" y="144.9" font-size="12.5" font-weight="600" style="fill:var(--ink,#1B1D22)" text-anchor="middle">817 k€</text>
+<text x="739.8" y="71.2" font-size="12.5" font-weight="600" style="fill:var(--ink,#1B1D22)" text-anchor="end">1,27 M€</text>
+<text x="236.2" y="116.9" font-size="12" style="fill:var(--ink-soft,#5C5E63)">Desde el año 6, renta variable</text>
+</svg>
+      <svg class="proy-grafico pg-movil" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pg-movil-t pg-movil-d" font-family="inherit">
+<title id="pg-movil-t">Renta anual que cobra la propiedad, años 1 a 20</title>
+<desc id="pg-movil-d">Años 1 a 5: se paga la renta mínima. Años 6 a 20: se paga la renta variable del 32 %, que es mayor. Renta total estimada en 20 años: 18,88 M€.</desc>
+<rect x="44" y="12" width="12" height="12" rx="2" fill="#4F7BB8"/><text x="62" y="22" font-size="12" style="fill:var(--ink,#1B1D22)">Se paga la renta mínima</text>
+<rect x="44" y="30" width="12" height="12" rx="2" fill="#D2603A"/><text x="62" y="40" font-size="12" style="fill:var(--ink,#1B1D22)">Se paga la renta variable (32 %)</text>
+<line x1="44" x2="352" y1="260.0" y2="260.0" style="stroke:var(--ink-soft,#5C5E63);stroke-opacity:.45" stroke-width="1"/>
+<text x="38" y="264.0" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="end">0</text>
+<line x1="44" x2="352" y1="205.7" y2="205.7" style="stroke:var(--line,#E6E1D5)" stroke-width="1"/>
+<text x="38" y="209.7" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="end">0,4 M€</text>
+<line x1="44" x2="352" y1="151.4" y2="151.4" style="stroke:var(--line,#E6E1D5)" stroke-width="1"/>
+<text x="38" y="155.4" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="end">0,8 M€</text>
+<line x1="44" x2="352" y1="97.1" y2="97.1" style="stroke:var(--line,#E6E1D5)" stroke-width="1"/>
+<text x="38" y="101.1" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="end">1,2 M€</text>
+<path d="M46.7,260 V212.7 Q46.7,208.7 50.7,208.7 H52.7 Q56.7,208.7 56.7,212.7 V260 Z" fill="#4F7BB8"><title>Año 1: renta a pagar 378.000 € · renta mínima (mínima 378.000 €; variable 272.320 €)</title></path>
+<text x="51.7" y="277" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">1</text>
+<path d="M62.1,260 V161.4 Q62.1,157.4 66.1,157.4 H68.1 Q72.1,157.4 72.1,161.4 V260 Z" fill="#4F7BB8"><title>Año 2: renta a pagar 756.000 € · renta mínima (mínima 756.000 €; variable 663.040 €)</title></path>
+<path d="M77.5,260 V161.4 Q77.5,157.4 81.5,157.4 H83.5 Q87.5,157.4 87.5,161.4 V260 Z" fill="#4F7BB8"><title>Año 3: renta a pagar 756.000 € · renta mínima (mínima 756.000 €; variable 728.160 €)</title></path>
+<path d="M92.9,260 V158.8 Q92.9,154.8 96.9,154.8 H98.9 Q102.9,154.8 102.9,158.8 V260 Z" fill="#4F7BB8"><title>Año 4: renta a pagar 774.900 € · renta mínima (mínima 774.900 €; variable 765.160 €)</title></path>
+<path d="M108.3,260 V156.2 Q108.3,152.2 112.3,152.2 H114.3 Q118.3,152.2 118.3,156.2 V260 Z" fill="#4F7BB8"><title>Año 5: renta a pagar 794.272 € · renta mínima (mínima 794.272 €; variable 791.800 €)</title></path>
+<text x="113.3" y="277" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">5</text>
+<path d="M123.7,260 V153.1 Q123.7,149.1 127.7,149.1 H129.7 Q133.7,149.1 133.7,153.1 V260 Z" fill="#D2603A"><title>Año 6: renta a pagar 817.138 € · renta variable 32 % (mínima 814.129 €; variable 817.138 €)</title></path>
+<text x="128.7" y="277" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">6</text>
+<path d="M139.1,260 V149.6 Q139.1,145.6 143.1,145.6 H145.1 Q149.1,145.6 149.1,149.6 V260 Z" fill="#D2603A"><title>Año 7: renta a pagar 843.286 € · renta variable 32 % (mínima 834.483 €; variable 843.286 €)</title></path>
+<path d="M154.5,260 V145.9 Q154.5,141.9 158.5,141.9 H160.5 Q164.5,141.9 164.5,145.9 V260 Z" fill="#D2603A"><title>Año 8: renta a pagar 870.271 € · renta variable 32 % (mínima 855.345 €; variable 870.271 €)</title></path>
+<path d="M169.9,260 V142.1 Q169.9,138.1 173.9,138.1 H175.9 Q179.9,138.1 179.9,142.1 V260 Z" fill="#D2603A"><title>Año 9: renta a pagar 898.120 € · renta variable 32 % (mínima 876.728 €; variable 898.120 €)</title></path>
+<path d="M185.3,260 V138.2 Q185.3,134.2 189.3,134.2 H191.3 Q195.3,134.2 195.3,138.2 V260 Z" fill="#D2603A"><title>Año 10: renta a pagar 926.860 € · renta variable 32 % (mínima 898.646 €; variable 926.860 €)</title></path>
+<text x="190.3" y="277" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">10</text>
+<path d="M200.7,260 V134.2 Q200.7,130.2 204.7,130.2 H206.7 Q210.7,130.2 210.7,134.2 V260 Z" fill="#D2603A"><title>Año 11: renta a pagar 956.519 € · renta variable 32 % (mínima 921.113 €; variable 956.519 €)</title></path>
+<path d="M216.1,260 V130.0 Q216.1,126.0 220.1,126.0 H222.1 Q226.1,126.0 226.1,130.0 V260 Z" fill="#D2603A"><title>Año 12: renta a pagar 987.128 € · renta variable 32 % (mínima 944.140 €; variable 987.128 €)</title></path>
+<path d="M231.5,260 V125.7 Q231.5,121.7 235.5,121.7 H237.5 Q241.5,121.7 241.5,125.7 V260 Z" fill="#D2603A"><title>Año 13: renta a pagar 1.018.716 € · renta variable 32 % (mínima 967.744 €; variable 1.018.716 €)</title></path>
+<path d="M246.9,260 V121.3 Q246.9,117.3 250.9,117.3 H252.9 Q256.9,117.3 256.9,121.3 V260 Z" fill="#D2603A"><title>Año 14: renta a pagar 1.051.315 € · renta variable 32 % (mínima 991.938 €; variable 1.051.315 €)</title></path>
+<path d="M262.3,260 V116.8 Q262.3,112.8 266.3,112.8 H268.3 Q272.3,112.8 272.3,116.8 V260 Z" fill="#D2603A"><title>Año 15: renta a pagar 1.084.957 € · renta variable 32 % (mínima 1.016.736 €; variable 1.084.957 €)</title></path>
+<text x="267.3" y="277" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">15</text>
+<path d="M277.7,260 V112.0 Q277.7,108.0 281.7,108.0 H283.7 Q287.7,108.0 287.7,112.0 V260 Z" fill="#D2603A"><title>Año 16: renta a pagar 1.119.675 € · renta variable 32 % (mínima 1.042.154 €; variable 1.119.675 €)</title></path>
+<path d="M293.1,260 V107.2 Q293.1,103.2 297.1,103.2 H299.1 Q303.1,103.2 303.1,107.2 V260 Z" fill="#D2603A"><title>Año 17: renta a pagar 1.155.505 € · renta variable 32 % (mínima 1.068.208 €; variable 1.155.505 €)</title></path>
+<path d="M308.5,260 V102.2 Q308.5,98.2 312.5,98.2 H314.5 Q318.5,98.2 318.5,102.2 V260 Z" fill="#D2603A"><title>Año 18: renta a pagar 1.192.481 € · renta variable 32 % (mínima 1.094.913 €; variable 1.192.481 €)</title></path>
+<path d="M323.9,260 V97.0 Q323.9,93.0 327.9,93.0 H329.9 Q333.9,93.0 333.9,97.0 V260 Z" fill="#D2603A"><title>Año 19: renta a pagar 1.230.641 € · renta variable 32 % (mínima 1.122.286 €; variable 1.230.641 €)</title></path>
+<path d="M339.3,260 V91.6 Q339.3,87.6 343.3,87.6 H345.3 Q349.3,87.6 349.3,91.6 V260 Z" fill="#D2603A"><title>Año 20: renta a pagar 1.270.021 € · renta variable 32 % (mínima 1.150.343 €; variable 1.270.021 €)</title></path>
+<text x="344.3" y="277" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">20</text>
+<text x="198.0" y="296" font-size="11" style="fill:var(--ink-soft,#5C5E63)" text-anchor="middle">Año del contrato</text>
+<text x="128.7" y="141.1" font-size="11.5" font-weight="600" style="fill:var(--ink,#1B1D22)" text-anchor="middle">817 k€</text>
+<text x="349.3" y="79.6" font-size="11.5" font-weight="600" style="fill:var(--ink,#1B1D22)" text-anchor="end">1,27 M€</text>
+</svg>
+    </div>
+    <div class="proy-card proy-scroll">
+      <table class="proy-tabla"><thead><tr><th scope="col">Año</th><th scope="col">Ventas netas*</th><th scope="col">Renta mínima</th><th scope="col">Variable 32 %</th><th scope="col">Renta a pagar</th></tr></thead><tbody><tr><th scope="row">Año 1 (6 meses)</th><td>851 k€</td><td>378 k€</td><td>272 k€</td><td class="paga"><span class="sw minima"></span>378 k€ <small>Mínima</small></td></tr><tr><th scope="row">Año 2</th><td>2.072 k€</td><td>756 k€</td><td>663 k€</td><td class="paga"><span class="sw minima"></span>756 k€ <small>Mínima</small></td></tr><tr><th scope="row">Año 3</th><td>2.276 k€</td><td>756 k€</td><td>728 k€</td><td class="paga"><span class="sw minima"></span>756 k€ <small>Mínima</small></td></tr><tr><th scope="row">Año 4</th><td>2.391 k€</td><td>775 k€</td><td>765 k€</td><td class="paga"><span class="sw minima"></span>775 k€ <small>Mínima</small></td></tr><tr><th scope="row">Año 5</th><td>2.474 k€</td><td>794 k€</td><td>792 k€</td><td class="paga"><span class="sw minima"></span>794 k€ <small>Mínima</small></td></tr><tr><th scope="row">Año 6</th><td>2.554 k€</td><td>814 k€</td><td>817 k€</td><td class="paga"><span class="sw variable"></span>817 k€ <small>Variable</small></td></tr><tr><th scope="row">Año 8</th><td>2.720 k€</td><td>855 k€</td><td>870 k€</td><td class="paga"><span class="sw variable"></span>870 k€ <small>Variable</small></td></tr><tr><th scope="row">Año 10</th><td>2.896 k€</td><td>899 k€</td><td>927 k€</td><td class="paga"><span class="sw variable"></span>927 k€ <small>Variable</small></td></tr><tr><th scope="row">Año 15</th><td>3.390 k€</td><td>1.017 k€</td><td>1.085 k€</td><td class="paga"><span class="sw variable"></span>1.085 k€ <small>Variable</small></td></tr><tr><th scope="row">Año 20</th><td>3.969 k€</td><td>1.150 k€</td><td>1.270 k€</td><td class="paga"><span class="sw variable"></span>1.270 k€ <small>Variable</small></td></tr><tr class="total"><th scope="row">Total 20 años</th><td>58.260 k€</td><td>18.058 k€</td><td>18.643 k€</td><td class="paga">18.882 k€</td></tr></tbody></table>
+    </div>
+    <p class="proy-nota">* Ventas netas: ventas sin IVA de alojamiento, desayunos y SHOPP'N menos las comisiones de las OTAs, estimadas en un 7,5 % de media. Las ventas son una estimación de SLEEP'N. Año 1: 6 meses de carencia y 6 de operación. La renta mínima se actualiza con el IPC desde el año 4; aquí se aplica el tope del 2,5 % anual.</p>
   </div>
 </section>
 
